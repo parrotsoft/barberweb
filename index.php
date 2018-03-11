@@ -63,30 +63,17 @@ ini_set('display_errors', '1');
     c.nombres_apellidos as cliente,
     v.total,
     v.porcentaje,
-    V.fecha 
+    v.fecha 
     from ventas v 
     inner join barberos b on v.barbero_id = b.id
     inner join clientes c on v.cliente_id = c.id
     where date(v.fecha) BETWEEN ('".$_POST['fecha1']."') AND ('".$_POST['fecha2']."')
     ORDER by v.fecha DEsC");
 
-    echo ("select 
-    v.id,
-    b.nombres_apellidos as barbero,
-    c.nombres_apellidos as cliente,
-    v.total,
-    v.porcentaje,
-    V.fecha 
-    from ventas v 
-    inner join barberos b on v.barbero_id = b.id
-    inner join clientes c on v.cliente_id = c.id
-    where date(v.fecha) BETWEEN ('".$_POST['fecha1']."') AND ('".$_POST['fecha2']."')
-    ORDER by v.fecha DEsC");
-}
 
 
 
-    /*echo "<center><h4> <span class='label label-success'>Inicial: ".$_POST['fecha1']." - Final: ".$_POST['fecha2']."</span></h4></center>";
+    echo "<center><h4> <span class='label label-success'>Inicial: ".$_POST['fecha1']." - Final: ".$_POST['fecha2']."</span></h4></center>";
 
     echo "<table class='table table-bordered'><tr><td>Barbero</td><td>Servicio</td><td>Cliente</td><td>%</td><td>Total</td></tr>";
 
@@ -109,14 +96,15 @@ ini_set('display_errors', '1');
     echo "<h4><span class='label label-default'>Vental Total</span> : <span class='label label-primary'>$".number_format($total,2)."</span></h4>";
     echo "<h4><span class='label label-default'>Utilidad Total</span> : <span class='label label-warning'>$".number_format($utilidadTotal,2)."</span></h4>";
 
-        }*/
+        }
 
 
-        /*function getServicio($venta_id, $conexion) {
+        function getServicio($venta_id, $conexion) {
             $result = $conexion->query("select s.servicio from detalles_ventas  d inner JOIN servicios s on d.servicio_id = s.id where d.venta_id = ".$venta_id."");
             $row=mysqli_fetch_assoc($result);
             return $row['servicio'];
-        }*/
+        }
+    }
     
     
 ?>
