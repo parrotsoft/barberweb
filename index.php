@@ -70,9 +70,18 @@ ini_set('display_errors', '1');
     where date(v.fecha) BETWEEN ('".$_POST['fecha1']."') AND ('".$_POST['fecha2']."')
     ORDER by v.fecha DEsC");
 
-    print_r($result);
-}else{
-    echo  "xxxx";
+    echo ("select 
+    v.id,
+    b.nombres_apellidos as barbero,
+    c.nombres_apellidos as cliente,
+    v.total,
+    v.porcentaje,
+    V.fecha 
+    from ventas v 
+    inner join barberos b on v.barbero_id = b.id
+    inner join clientes c on v.cliente_id = c.id
+    where date(v.fecha) BETWEEN ('".$_POST['fecha1']."') AND ('".$_POST['fecha2']."')
+    ORDER by v.fecha DEsC");
 }
 
 
