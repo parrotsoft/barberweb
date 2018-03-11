@@ -47,7 +47,7 @@
 <?php 
 
         if($_POST){
-            $mysqli = new mysqli("127.0.0.1", "root", "Mla1043605421", "barberia");
+            $mysqli = new mysqli("localhost", "root", "Mla1043605421", "barberia");
     if ($mysqli->connect_errno) {
         echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
