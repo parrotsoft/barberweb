@@ -71,6 +71,8 @@ ini_set('display_errors', '1');
     ORDER by v.fecha DEsC");
 
     print_r($result);
+}else{
+    echo  "xxxx";
 }
 
 
