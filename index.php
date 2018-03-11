@@ -51,7 +51,7 @@ ini_set('display_errors', '1');
 <?php 
 
         if($_POST){
-            $mysqli = new mysqli("localhost", "root", "Mla1043605421", "barberia");
+            $mysqli = new mysqli("127.0.0.1", "root", "Mla1043605421", "barberia");
     if ($mysqli->connect_errno) {
         echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
@@ -69,7 +69,9 @@ ini_set('display_errors', '1');
     where date(v.fecha) BETWEEN ('".$_POST['fecha1']."') AND ('".$_POST['fecha2']."')
     ORDER by v.fecha DEsC");
 
-    echo "<center><h4> <span class='label label-success'>Inicial: ".$_POST['fecha1']." - Final: ".$_POST['fecha2']."</span></h4></center>";
+    print_r($result);
+
+    /*echo "<center><h4> <span class='label label-success'>Inicial: ".$_POST['fecha1']." - Final: ".$_POST['fecha2']."</span></h4></center>";
 
     echo "<table class='table table-bordered'><tr><td>Barbero</td><td>Servicio</td><td>Cliente</td><td>%</td><td>Total</td></tr>";
 
@@ -92,7 +94,7 @@ ini_set('display_errors', '1');
     echo "<h4><span class='label label-default'>Vental Total</span> : <span class='label label-primary'>$".number_format($total,2)."</span></h4>";
     echo "<h4><span class='label label-default'>Utilidad Total</span> : <span class='label label-warning'>$".number_format($utilidadTotal,2)."</span></h4>";
 
-        }
+        }*/
 
 
         function getServicio($venta_id, $conexion) {
