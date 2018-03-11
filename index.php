@@ -55,9 +55,9 @@ ini_set('display_errors', '1');
     if ($mysqli->connect_errno) {
         echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
-}
+
     
-    /*$result = $mysqli->query("select 
+    $result = $mysqli->query("select 
     v.id,
     b.nombres_apellidos as barbero,
     c.nombres_apellidos as cliente,
@@ -68,7 +68,10 @@ ini_set('display_errors', '1');
     inner join barberos b on v.barbero_id = b.id
     inner join clientes c on v.cliente_id = c.id
     where date(v.fecha) BETWEEN ('".$_POST['fecha1']."') AND ('".$_POST['fecha2']."')
-    ORDER by v.fecha DEsC");*/
+    ORDER by v.fecha DEsC");
+
+    print_r($result);
+}
 
 
 
