@@ -104,7 +104,7 @@ ini_set('display_errors', '1');
             $row=mysqli_fetch_assoc($result);
             return $row['servicio'];
         }
-    }
+        
     
     
 ?>
